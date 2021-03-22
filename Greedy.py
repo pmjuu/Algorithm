@@ -35,8 +35,6 @@ print(result)
 
 
 '''3 숫자 카드 게임'''
-#뭐가 좋지?
-##차이 없을듯
 row, column = map(int, input().split())
 result = 0
 
