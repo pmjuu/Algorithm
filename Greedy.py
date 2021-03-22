@@ -44,3 +44,34 @@ for i in range(row):
   result = max(min_value, result)
 
 print(result)
+
+
+'''4 1이 될 때까지'''
+n, k = map(int, input().split())
+result = 0
+
+while n > 1:
+  if n % k == 0: 
+    n //= k #N이 K로 나누어 떨어진다면 K로 나누기
+  else:
+    n -= 1 #나누어 떨어지지 않는다면 1 빼기
+  result += 1
+
+print(result)
+
+###연산의 수 줄이는 코드 - 1씩 빼는 것 미리 계산해서 한번에 빼기
+n, k = map(int, input().split())
+result = 0
+
+while True:
+  if n < k: break
+
+  target = (n // k) * k
+  result += (n - target)
+  n = target
+
+  n //= k
+  result += 1
+
+result += (n-1)
+print(result)
