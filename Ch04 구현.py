@@ -48,7 +48,22 @@ count = 0
 for i in range(h+1):
   for j in range(60):
     for k in range(60):
-      if '3' in str(i) + str(j) + str(j):
+      if '3' in str(i) + str(j) + str(k):
         count += 1
+
+print(count)
+
+
+'''3 왕실의 나이트'''
+data = list(input())
+x = ord(data[0]) - 96 #가로 행
+y = int(data[1]) #세로 열
+count = 0
+steps = [(-2,-1), (-2,1), (2,-1),(2,1),(-1,-2),(-1,2),(1,-2),(1,2)] #이동가능한 8가지 방향
+
+for i in steps:
+  nx = x + i[0]
+  ny = y + i[1]
+  if 0 < nx < 9 and 0 < ny < 9: count += 1
 
 print(count)
