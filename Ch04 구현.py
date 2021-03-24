@@ -16,3 +16,39 @@ for i in data:
     x, y = nx, ny
 
 print(x, y)
+
+
+'''2 시각'''
+###삽질하는 풀이
+import sys
+n = int(sys.stdin.readline().rstrip())
+count = 0
+
+for i in range(n+1): #시
+  data = []
+  data.append(i//10)
+  data.append(i%10)
+  for j in range(60): #분
+    data2 = []
+    data2.append(j//10)
+    data2.append(j%10)
+    for k in range(60): #초
+      data3 = []
+      data3.append(k//10)
+      data3.append(k%10)
+      if 3 in data + data2 + data3:
+        count += 1
+
+print(count)
+
+###str() 활용한 효율적인 풀이
+h = int(input())
+count = 0
+
+for i in range(h+1):
+  for j in range(60):
+    for k in range(60):
+      if '3' in str(i) + str(j) + str(j):
+        count += 1
+
+print(count)
